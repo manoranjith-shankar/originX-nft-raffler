@@ -19,6 +19,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@truffle/hdwallet-provider": "^2.1.15",
     "aos": "^2.3.4",
     "assert": "^2.0.0",
     "dayjs": "^1.11.9",

@@ -58,56 +58,6 @@ class Footer extends Component {
                   </div>
                 </div>
               </div>
-              <div className="roadmap-section">
-                    <div className="container py-4">
-                        <div className="row">
-                        <div className="col-lg-12">
-                            {/* Roadmap Title */}
-                            <h5>Roadmap:</h5>
-                            {/* Roadmap Content */}
-                            <ul>
-                            <li>Q1 2023: Initial Development & Idea Shaping</li>
-                            <li>Q2 2023: Patent and Community Publishing (Current)</li>
-                            <li>Q3 2023: Introduction of advanced features & Mainnet Launch</li>
-                            <li>Q4 2023: Expansion of partnerships and community outreach</li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-              <div className="col-12 col-sm-6 col-lg-3">
-                {/* Footer Items */}
-                <div className="footer-items">
-                  {/* Footer Title */}
-                  <h4 className="footer-title">Join Waitlist</h4>
-                  {/* Subscribe Form */}
-                  <form onSubmit={this.handleSubmit}>
-                    <div className="subscribe-form">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Your Name"
-                          value={this.state.name}
-                          onChange={this.handleNameChange}
-                        />
-                      </div>
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          className="form-control"
-                          placeholder="Your Email"
-                          value={this.state.email}
-                          onChange={this.handleEmailChange}
-                        />
-                      </div>
-                      <button type="submit" className="btn">
-                        <i className="icon-paper-plane" />
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
             </div>
           </div>
         </div>
