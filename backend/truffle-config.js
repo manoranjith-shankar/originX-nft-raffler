@@ -21,7 +21,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const priv_key = process.env.PRIV_KEY;
-const api_key = process.env.API_KEY;
+const api_key = process.env.ALCHEMY_ID;
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 module.exports = {
@@ -42,32 +42,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
 
-    //Polygon - Mainnet forked
-    testnet: {
+    polygonAmoy: {
       networkCompleteTimeout: 1000000,
       provider: () =>
-        new HDWalletProvider(priv_key, "https://rpc.buildbear.io/experimental-shmi-skywalker-ea650ee3"),
-      network_id: 9816,
-      confirmations: 0,
-      timeoutBlocks: 0,
-      skipDryRun: true
-      },
-
-    linea: {
-      networkCompleteTimeout: 3000000000,
-      provider: () =>
-        new HDWalletProvider(priv_key, `https://linea-goerli.infura.io/v3/${api_key}`),
-      network_id: 59140,
-      confirmations: 0,
-      timeoutBlocks: 0,
-      skipDryRun: true
-      },
-
-    polygonMumbai: {
-      networkCompleteTimeout: 3000000000,
-      provider: () =>
-        new HDWalletProvider(priv_key, "https://polygon-mumbai.blockpi.network/v1/rpc/public"),
-      network_id: 80001,
+        new HDWalletProvider(priv_key, `https://polygon-amoy.g.alchemy.com/v2/${api_key}`),
+      network_id: 80002,
       confirmations: 0,
       timeoutBlocks: 0,
       skipDryRun: true

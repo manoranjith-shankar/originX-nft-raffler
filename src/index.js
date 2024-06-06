@@ -8,65 +8,30 @@ import {
   getDefaultWallets,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
-import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { mainnet, polygon, polygonMumbai } from 'wagmi/chains';
+import { configureChains, createClient, mainnet, sepolia, WagmiConfig } from 'wagmi';
+import { baseGoerli, lineaTestnet, polygon, polygonZkEvmTestnet } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
-export const linea = {
-  id: 59140,
-  name: 'Linea',
-  network: 'Linea',
+export const polygonAmoy = {
+  id: 80002,
+  name: 'Polygon Amoy',
+  network: 'Amoy',
   nativeCurrency: {
   decimals: 18,
-  name: 'Linea',
-  symbol: 'ETH',
+  symbol: 'MATIC',
   },
-    iconUrl: 'https://pbs.twimg.com/profile_images/1639402103486521344/erDLnbwE_400x400.jpg',
+    iconUrl: 'https://assets-global.website-files.com/637e2b6d602973ea0941d482/63e26c8a3f6e812d91a7aa3d_Polygon-New-Logo.png',
   rpcUrls: {
-  public: { http: ['https://rpc.goerli.linea.build'] },
-  default: { http: ['https://rpc.goerli.linea.build'] },
+  default: { http: [`https://polygon-amoy.g.alchemy.com/v2/${process.env.ALCHEMY_ID}`] },
   },
   blockExplorers: {
-  etherscan: { name: 'explorer', url: 'https://explorer.goerli.linea.build/' },
-  default: { name: 'explorer', url: 'https://explorer.goerli.linea.build/' },
-  },
-  contracts: {
-  multicall3: {
-  address: '0xca11bde05977b3631167028862be2a173976ca11',
-  blockCreated: 1,
-  },
+  default: { name: 'explorer', url: 'https://www.oklink.com/amoy/' },
   },
   }
 
-  export const testnet = {
-    id: 9816,
-    name: 'Buildbear Network',
-    network: 'Buildbear Network',
-    nativeCurrency: {
-    decimals: 18,
-    name: 'Buildbear Testnet',
-    symbol: 'ETH',
-    },
-      iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZsG2HQt3pYcu8zI-oZtc7CxF3gbdn906Bmr0lfTiREwxTD15yH4hBC1nOF4t8ZtHHTQY&usqp=CAU',
-    rpcUrls: {
-    public: { http: ['https://rpc.buildbear.io/experimental-shmi-skywalker-ea650ee3'] },
-    default: { http: ['https://rpc.buildbear.io/experimental-shmi-skywalker-ea650ee3'] },
-    },
-    blockExplorers: {
-    etherscan: { name: 'explorer', url: 'https://explorer.buildbear.io/experimental-shmi-skywalker-ea650ee3/' },
-    default: { name: 'explorer', url: 'https://explorer.buildbear.io/experimental-shmi-skywalker-ea650ee3/' },
-    },
-    contracts: {
-    multicall3: {
-    address: '0xca11bde05977b3631167028862be2a173976ca11',
-    blockCreated: 1,
-    },
-    },
-    }
-
 const { chains, provider } = configureChains(
-  [ polygonMumbai, testnet],
+  [ polygonAmoy, polygon, mainnet],
   [
     alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
     publicProvider()
